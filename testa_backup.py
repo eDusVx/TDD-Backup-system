@@ -15,3 +15,9 @@ def testa_data():
     # assert aux == 'igual'
 
 
+def testa_tabela_decisao():
+    """Função que testa se a tabela de decisão foi criada de forma correta,
+    como uma tupla estática, ou seja o valor sempre é o mesmo em todos os casos"""
+    assert isinstance(backup.tabela_decisao(), tuple)
+
+
