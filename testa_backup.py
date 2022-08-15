@@ -21,3 +21,30 @@ def testa_tabela_decisao():
     assert isinstance(backup.tabela_decisao(), tuple)
 
 
+def testa_executar_tabela():
+    """
+    Função que testa se a execução da tabela de decisão está correta
+    """
+    decision_table = backup.tabela_decisao()
+    assert backup.executar_tabela(decision_table) == 'Pen-drive para HD'
+    # assert backup.executar_tabela(decision_table) == 'HD para Pen-Drive'
+    # assert backup.executar_tabela(decision_table) == 'Erro'
+    # assert backup.executar_tabela(decision_table) == 'Faz nada'
+    # assert backup.executar_tabela(decision_table) == 'Impossível'
+
+
+def testa_backup():
+    """
+    Função que testa se foi feita a ação necessária.
+    """
+    assert backup.backup(backup.acao) == 'Os dados do pendrive ' \
+                                         'foram copiados para o HD com sucesso!'
+    # assert backup.backup(backup.acao) == 'Backup para Pendrive concluido com sucesso!'
+    # assert backup.backup(backup.acao) == 'Erro'
+    # assert backup.backup(backup.acao) == 'Impossível'
+
+
+testa_data()
+testa_tabela_decisao()
+testa_executar_tabela()
+testa_backup()
